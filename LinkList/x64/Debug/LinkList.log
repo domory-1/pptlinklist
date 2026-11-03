@@ -1,0 +1,51 @@
+﻿  AddressBook.cpp
+E:\pptlinklist\LinkList\AddressBook.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\pptlinklist\LinkList\LinkList.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“AddressBook.cpp”)
+  
+E:\pptlinklist\LinkList\AddressBook.cpp(113,21): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\AddressBook.cpp(114,6): error C2146: 语法错误: 缺少“;”(在标识符“cout”的前面)
+E:\pptlinklist\LinkList\AddressBook.cpp(119,21): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\AddressBook.cpp(120,6): error C2146: 语法错误: 缺少“;”(在标识符“cout”的前面)
+E:\pptlinklist\LinkList\AddressBook.cpp(125,21): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\AddressBook.cpp(126,6): error C2146: 语法错误: 缺少“;”(在标识符“cout”的前面)
+E:\pptlinklist\LinkList\AddressBook.cpp(158,23): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\AddressBook.cpp(159,3): error C2143: 语法错误: 缺少“;”(在“case”的前面)
+E:\pptlinklist\LinkList\AddressBook.cpp(168,30): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\AddressBook.cpp(169,3): error C2143: 语法错误: 缺少“;”(在“case”的前面)
+E:\pptlinklist\LinkList\AddressBook.cpp(186,91): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\AddressBook.cpp(187,3): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+  Banking.cpp
+E:\pptlinklist\LinkList\Banking.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\pptlinklist\LinkList\Banking.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Banking.cpp”)
+  
+E:\pptlinklist\LinkList\LinkList.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Banking.cpp”)
+  
+E:\pptlinklist\LinkList\Banking.cpp(67,34): error C2017: 未知转义序列
+E:\pptlinklist\LinkList\Banking.cpp(67,35): error C2146: 语法错误: 缺少“;”(在标识符“t鎴峰悕锛”的前面)
+E:\pptlinklist\LinkList\Banking.cpp(67,35): error C2065: “t鎴峰悕锛”: 未声明的标识符
+  BankingTest.cpp
+E:\pptlinklist\LinkList\LinkList.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“BankingTest.cpp”)
+  
+E:\pptlinklist\LinkList\Banking.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“BankingTest.cpp”)
+  
+  Main.cpp
+E:\pptlinklist\LinkList\Main.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+E:\pptlinklist\LinkList\LinkList.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Main.cpp”)
+  
+E:\pptlinklist\LinkList\Main.cpp(49,11): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\Main.cpp(50,3): error C2146: 语法错误: 缺少“;”(在标识符“cout”的前面)
+E:\pptlinklist\LinkList\Main.cpp(53,11): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\Main.cpp(54,3): error C2146: 语法错误: 缺少“;”(在标识符“cout”的前面)
+E:\pptlinklist\LinkList\Main.cpp(54,11): error C2001: 字符串字面量中的换行符
+E:\pptlinklist\LinkList\Main.cpp(55,3): error C2146: 语法错误: 缺少“;”(在标识符“key”的前面)
+  Test.cpp
+E:\pptlinklist\LinkList\LinkList.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Test.cpp”)
+  
+  正在生成代码...

@@ -1,4 +1,4 @@
-// LinkList.h		µ¥ÏòÁ´±íÀàÄ£°å	20200828 By LiQing ¾´ÇëÖ¸Õı£¡
+// LinkList.h		å•å‘é“¾è¡¨ç±»æ¨¡æ¿	20200828 By LiQing æ•¬è¯·æŒ‡æ­£ï¼
 #ifndef LINKLIST_H
 #define LINKLIST_H
 #define _CRT_SECURE_NO_WARNINGS			// for VS2019
@@ -9,78 +9,78 @@
 #include <cstdlib>
 using namespace std;
 
-template <typename T> class LinkList;	// ×îÍâ²ã£ºÁ´±íÀà£¨Ä£°å£©ÌáÇ°ÉùÃ÷
+template <typename T> class LinkList;	// æœ€å¤–å±‚ï¼šé“¾è¡¨ç±»ï¼ˆæ¨¡æ¿ï¼‰æå‰å£°æ˜
 
-template <typename T> class Node		// ÖĞ¼ä²ã£º½áµãÀà£¨Ä£°å£©
+template <typename T> class Node		// ä¸­é—´å±‚ï¼šç»“ç‚¹ç±»ï¼ˆæ¨¡æ¿ï¼‰
 {
 public:
-	Node() : next(NULL) {}										// Ä¬ÈÏµÄ¹¹Ôìº¯Êı£¬¹ÊÒâ²»³õÊ¼»¯dataÒÔ±£³ÖdataµÄ¡°Ô­ÉúÌ¬¡±
-	Node(const T &t) : data(t), next(NULL) {}					// ×ª»»¹¹Ôìº¯Êı
-	Node(const Node<T> &node) : data(node.data), next(NULL) {}	// ¿½±´¹¹Ôìº¯Êı
-	Node<T> & operator=(const Node<T> &node)					// ÖØÔØ¸³ÖµÔËËã·ûº¯Êı
+	Node() : next(NULL) {}										// é»˜è®¤çš„æ„é€ å‡½æ•°ï¼Œæ•…æ„ä¸åˆå§‹åŒ–dataä»¥ä¿æŒdataçš„â€œåŸç”Ÿæ€â€
+	Node(const T &t) : data(t), next(NULL) {}					// è½¬æ¢æ„é€ å‡½æ•°
+	Node(const Node<T> &node) : data(node.data), next(NULL) {}	// æ‹·è´æ„é€ å‡½æ•°
+	Node<T> & operator=(const Node<T> &node)					// é‡è½½èµ‹å€¼è¿ç®—ç¬¦å‡½æ•°
 	{
-		data = node.data;				// ½áµã¼ä¸³ÖµÊ±£¬½ö¸Ä±äÊı¾İÓò£¬²»¸Ä±äÁ´½Ó·½Ê½
+		data = node.data;				// ç»“ç‚¹é—´èµ‹å€¼æ—¶ï¼Œä»…æ”¹å˜æ•°æ®åŸŸï¼Œä¸æ”¹å˜é“¾æ¥æ–¹å¼
 		return *this;
 	}
-	friend class LinkList<T>;			// ÉùÃ÷ÓÑÀà£¬ÒÔÊ¹LinkList<T>ÀàµÄ³ÉÔ±º¯Êı·ÃÎÊ½áµãÀàµÄË½ÓĞ³ÉÔ±dataºÍnext
+	friend class LinkList<T>;			// å£°æ˜å‹ç±»ï¼Œä»¥ä½¿LinkList<T>ç±»çš„æˆå‘˜å‡½æ•°è®¿é—®ç»“ç‚¹ç±»çš„ç§æœ‰æˆå‘˜dataå’Œnext
 private:
-	T data;								// ×îÀï²ã£ºÊı¾İÓò£¨ĞÎÊ½Êı¾İÀàĞÍ£©
-	Node<T> *next;						// Ö¸ÕëÓò
+	T data;								// æœ€é‡Œå±‚ï¼šæ•°æ®åŸŸï¼ˆå½¢å¼æ•°æ®ç±»å‹ï¼‰
+	Node<T> *next;						// æŒ‡é’ˆåŸŸ
 };
 
-template <typename T> class LinkList			// µ¥ÏòÁ´±íÀàÄ£°åÉè¼Æ
+template <typename T> class LinkList			// å•å‘é“¾è¡¨ç±»æ¨¡æ¿è®¾è®¡
 {
 public:
-	LinkList(int n=0, const T *array=NULL);		// ¹¹Ôìº¯Êı£¨º¬Ä¬ÈÏµÄ¹¹Ôìº¯Êı¡¢×ª»»¹¹Ôìº¯ÊıµÈ£©
-	LinkList(const LinkList &list);				// (Éî)¿½±´¹¹Ôìº¯Êı
-	~LinkList();								// Îö¹¹º¯Êı
-	LinkList & operator=(const LinkList &list);	// (Éî)¸³ÖµÔËËã·ûº¯Êı
+	LinkList(int n=0, const T *array=NULL);		// æ„é€ å‡½æ•°ï¼ˆå«é»˜è®¤çš„æ„é€ å‡½æ•°ã€è½¬æ¢æ„é€ å‡½æ•°ç­‰ï¼‰
+	LinkList(const LinkList &list);				// (æ·±)æ‹·è´æ„é€ å‡½æ•°
+	~LinkList();								// ææ„å‡½æ•°
+	LinkList & operator=(const LinkList &list);	// (æ·±)èµ‹å€¼è¿ç®—ç¬¦å‡½æ•°
 
-	void PutList(ostream &out) const;			// Êä³öÁ´±íËùÓĞ½áµãµÄÊı¾İµ½ÒıÓÃoutËù°ó¶¨µÄostream¶ÔÏó£¬¸Ã¶ÔÏó¿ÉÒÔÊÇcout£¬Ò²¿ÉÒÔÊÇÎÄ¼ş¶ÔÏó
-	void GetList(istream &in);					// ´ÓÊäÈëÉè±¸in»ñÈ¡Êı¾İ£¬ĞÎ³ÉÁ´±í¡£
-	int Save(const char *filename);				// ½«Á´±íËùÓĞ½áµãµÄÊı¾İĞ´ÈëÖ¸¶¨ÎÄ¼ş
-	int Load(const char *filename);				// ´ÓÖ¸¶¨ÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ£¬¹¹ÔìÁ´±í
-	void ShowList() const;						// Êä³öÁ´±íËùÓĞ½áµãµÄÊı¾İ£¨ÁíÒ»ÖÖ¸ñÊ½£ºÔÚÒ»ĞĞÖĞÊä³ö£©
+	void PutList(ostream &out) const;			// è¾“å‡ºé“¾è¡¨æ‰€æœ‰ç»“ç‚¹çš„æ•°æ®åˆ°å¼•ç”¨outæ‰€ç»‘å®šçš„ostreamå¯¹è±¡ï¼Œè¯¥å¯¹è±¡å¯ä»¥æ˜¯coutï¼Œä¹Ÿå¯ä»¥æ˜¯æ–‡ä»¶å¯¹è±¡
+	void GetList(istream &in);					// ä»è¾“å…¥è®¾å¤‡inè·å–æ•°æ®ï¼Œå½¢æˆé“¾è¡¨ã€‚
+	int Save(const char *filename);				// å°†é“¾è¡¨æ‰€æœ‰ç»“ç‚¹çš„æ•°æ®å†™å…¥æŒ‡å®šæ–‡ä»¶
+	int Load(const char *filename);				// ä»æŒ‡å®šæ–‡ä»¶ä¸­è¯»å–æ•°æ®ï¼Œæ„é€ é“¾è¡¨
+	void ShowList() const;						// è¾“å‡ºé“¾è¡¨æ‰€æœ‰ç»“ç‚¹çš„æ•°æ®ï¼ˆå¦ä¸€ç§æ ¼å¼ï¼šåœ¨ä¸€è¡Œä¸­è¾“å‡ºï¼‰
 
-	Node<T> *Insert(const T &t);				// ²åÈëÒ»¸ö½áµã³ÉÎªĞÂµÄÊ×½áµã
-	Node<T> *InsertBefore(const T &t);			// ÔÚµ±Ç°½áµãÖ®Ç°²åÈëÒ»¸ö½áµã
-	Node<T> *InsertAfter(const T &t);			// ÔÚµ±Ç°½áµãÖ®ºó²åÈëÒ»¸ö½áµã
-	Node<T> *Append(const T &t);				// ×·¼ÓÒ»¸ö½áµã³ÉÎªĞÂµÄÎ²½áµã
+	Node<T> *Insert(const T &t);				// æ’å…¥ä¸€ä¸ªç»“ç‚¹æˆä¸ºæ–°çš„é¦–ç»“ç‚¹
+	Node<T> *InsertBefore(const T &t);			// åœ¨å½“å‰ç»“ç‚¹ä¹‹å‰æ’å…¥ä¸€ä¸ªç»“ç‚¹
+	Node<T> *InsertAfter(const T &t);			// åœ¨å½“å‰ç»“ç‚¹ä¹‹åæ’å…¥ä¸€ä¸ªç»“ç‚¹
+	Node<T> *Append(const T &t);				// è¿½åŠ ä¸€ä¸ªç»“ç‚¹æˆä¸ºæ–°çš„å°¾ç»“ç‚¹
 
-	void FreeList();							// ÊÍ·ÅÁ´±íÖĞµÄËùÓĞ½áµã
-	T DeleteCurNode() throw(int);				// É¾³ıµ±Ç°½áµã£¬ÆäÏÂÒ»¸ö½áµã£¨³ÉÎªĞÂµÄµ±Ç°½áµã£©£¬Öµ·µ»Ø±»É¾½áµãÊı¾İÓòÊıÖµ
-	T ModifyData(const T &t) throw(int);		// ĞŞ¸Ä(Ìæ»»)µ±Ç°½áµãµÄÊı¾İÓòÊıÖµ
+	void FreeList();							// é‡Šæ”¾é“¾è¡¨ä¸­çš„æ‰€æœ‰ç»“ç‚¹
+	T DeleteCurNode()  ;				// åˆ é™¤å½“å‰ç»“ç‚¹ï¼Œå…¶ä¸‹ä¸€ä¸ªç»“ç‚¹ï¼ˆæˆä¸ºæ–°çš„å½“å‰ç»“ç‚¹ï¼‰ï¼Œå€¼è¿”å›è¢«åˆ ç»“ç‚¹æ•°æ®åŸŸæ•°å€¼
+	T ModifyData(const T &t)  ;		// ä¿®æ”¹(æ›¿æ¢)å½“å‰ç»“ç‚¹çš„æ•°æ®åŸŸæ•°å€¼
 
-	int NumNodes() const;						// ·µ»Ø½áµãÊı
-	int CurPos() const;							// ·µ»Øµ±Ç°½áµãµÄĞòºÅ£¨-1±íÊ¾ÎŞµ±Ç°½áµã£©
-	Node<T> *CurNode();							// ·µ»Øµ±Ç°½áµãµÄµØÖ·£¨NULL±íÊ¾ÎŞµ±Ç°½áµã£©
-	T & CurData() throw(int);					// ÒıÓÃ·µ»Øµ±Ç°½áµãÊı¾İÓò³ÉÔ±£¬º¯Êıµ÷ÓÃ±í´ïÊ½¿É×ö×óÖµ
+	int NumNodes() const;						// è¿”å›ç»“ç‚¹æ•°
+	int CurPos() const;							// è¿”å›å½“å‰ç»“ç‚¹çš„åºå·ï¼ˆ-1è¡¨ç¤ºæ— å½“å‰ç»“ç‚¹ï¼‰
+	Node<T> *CurNode();							// è¿”å›å½“å‰ç»“ç‚¹çš„åœ°å€ï¼ˆNULLè¡¨ç¤ºæ— å½“å‰ç»“ç‚¹ï¼‰
+	T & CurData()  ;					// å¼•ç”¨è¿”å›å½“å‰ç»“ç‚¹æ•°æ®åŸŸæˆå‘˜ï¼Œå‡½æ•°è°ƒç”¨è¡¨è¾¾å¼å¯åšå·¦å€¼
 
-	Node<T> *GoTop(), *Go(int n), *GoBottom();	// µ±Ç°½áµã¾ø¶Ô¶¨Î»£ºÊ×½áµã¡¢µÚn¸ö½áµã(n´Ó0Æğ)¡¢Î²½áµã
-	Node<T> *Skip(int n=1)  throw(int);			// µ±Ç°½áµãÏà¶Ô¶¨Î»£¨n¿ÉÎª¸ºÊı£©£¬Ä¬ÈÏnÎª1±íÊ¾ÏÂÒ»¸ö½áµã
-	template <typename TYPE> Node<T> *Locate(const TYPE &x, bool newsearch=false); // µ±Ç°½áµãÒÀÌõ¼ş£¨¸ø¶¨TYPEÀàĞÍ£©¶¨Î»
+	Node<T> *GoTop(), *Go(int n), *GoBottom();	// å½“å‰ç»“ç‚¹ç»å¯¹å®šä½ï¼šé¦–ç»“ç‚¹ã€ç¬¬nä¸ªç»“ç‚¹(nä»0èµ·)ã€å°¾ç»“ç‚¹
+	Node<T> *Skip(int n=1)  ;			// å½“å‰ç»“ç‚¹ç›¸å¯¹å®šä½ï¼ˆnå¯ä¸ºè´Ÿæ•°ï¼‰ï¼Œé»˜è®¤nä¸º1è¡¨ç¤ºä¸‹ä¸€ä¸ªç»“ç‚¹
+	template <typename TYPE> Node<T> *Locate(const TYPE &x, bool newsearch=false); // å½“å‰ç»“ç‚¹ä¾æ¡ä»¶ï¼ˆç»™å®šTYPEç±»å‹ï¼‰å®šä½
 
-	template <typename TYPE> void Sort(const TYPE &x, bool ascending=true);	// ¸ù¾İTYPEÀàĞÍÅÅĞò£¨ÉıĞò»ò½µĞò£©
-	void Reverse();								// Á´±í½áµãµ¹ÖÃ
+	template <typename TYPE> void Sort(const TYPE &x, bool ascending=true);	// æ ¹æ®TYPEç±»å‹æ’åºï¼ˆå‡åºæˆ–é™åºï¼‰
+	void Reverse();								// é“¾è¡¨ç»“ç‚¹å€’ç½®
 
 private:
-	Node<T> *head, *cur_node;					// Á´±íÊ×½áµãµØÖ·£¨Ö¸Õë£©¡¢µ±Ç°½áµãµØÖ·£¨Ö¸Õë£©
-	int num;									// ÓÃÓÚ¼ÇÂ¼Á´±íÖĞ½áµãµÄ¸öÊı
+	Node<T> *head, *cur_node;					// é“¾è¡¨é¦–ç»“ç‚¹åœ°å€ï¼ˆæŒ‡é’ˆï¼‰ã€å½“å‰ç»“ç‚¹åœ°å€ï¼ˆæŒ‡é’ˆï¼‰
+	int num;									// ç”¨äºè®°å½•é“¾è¡¨ä¸­ç»“ç‚¹çš„ä¸ªæ•°
 };
 
 /********************************************************************
- * ÀàÄ£°å³ÉÔ±º¯Êı²Ù×÷ÃèÊö£¨Ó¦¸Ã±àĞ´ÔÚÍ·ÎÄ¼şÖĞ£©£¡ÇëÔÚ´ËÍê³É³ÉÔ±º¯Êı *
+ * ç±»æ¨¡æ¿æˆå‘˜å‡½æ•°æ“ä½œæè¿°ï¼ˆåº”è¯¥ç¼–å†™åœ¨å¤´æ–‡ä»¶ä¸­ï¼‰ï¼è¯·åœ¨æ­¤å®Œæˆæˆå‘˜å‡½æ•° *
  ********************************************************************/
 template <typename T>
-LinkList<T>::LinkList(int n, const T *array) : head(NULL),cur_node(NULL),num(0)	// ¹¹Ôìº¯Êı£¨º¬Ä¬ÈÏµÄ¹¹Ôìº¯Êı¡¢×ª»»¹¹Ôìº¯ÊıµÈ£©
+LinkList<T>::LinkList(int n, const T *array) : head(NULL),cur_node(NULL),num(0)	// æ„é€ å‡½æ•°ï¼ˆå«é»˜è®¤çš„æ„é€ å‡½æ•°ã€è½¬æ¢æ„é€ å‡½æ•°ç­‰ï¼‰
 {
 	Node<T> *p;
 	for(int i=n-1; i>=0; i--)
 	{
-		p = new Node<T>;				// ×Ô¶¯µ÷ÓÃNode<T>Ä¬ÈÏµÄ¹¹Ôìº¯Êı´´½¨¶Ñ½áµã
+		p = new Node<T>;				// è‡ªåŠ¨è°ƒç”¨Node<T>é»˜è®¤çš„æ„é€ å‡½æ•°åˆ›å»ºå †ç»“ç‚¹
 		if(array!=NULL)
-			p->data = array[i];			// Èç¹ûarrayÎªNULL£¬Ôò±£³Öp->dataµÄÄ¬ÈÏ×´Ì¬
-		p->next = head;					// ÔËÓÃÍ·²å·¨£¬°´Êı×éÔªËØµ¹Ğò½«¶Ñ½áµãÒÀ´Î²åÈëµ½Á´±íÊ×½áµãÇ°
+			p->data = array[i];			// å¦‚æœarrayä¸ºNULLï¼Œåˆ™ä¿æŒp->dataçš„é»˜è®¤çŠ¶æ€
+		p->next = head;					// è¿ç”¨å¤´æ’æ³•ï¼ŒæŒ‰æ•°ç»„å…ƒç´ å€’åºå°†å †ç»“ç‚¹ä¾æ¬¡æ’å…¥åˆ°é“¾è¡¨é¦–ç»“ç‚¹å‰
 		head = p;
 	}
 	cur_node = head;
@@ -88,53 +88,53 @@ LinkList<T>::LinkList(int n, const T *array) : head(NULL),cur_node(NULL),num(0)	
 }
 
 template <typename T>
-LinkList<T>::LinkList(const LinkList &list) : head(NULL),cur_node(NULL),num(0)	// (Éî)¿½±´¹¹Ôìº¯Êı
+LinkList<T>::LinkList(const LinkList &list) : head(NULL),cur_node(NULL),num(0)	// (æ·±)æ‹·è´æ„é€ å‡½æ•°
 {
-	*this = list;	// Ê×ÏÈÍ¨¹ıÏÔÊ½µÄÃ°ºÅ¹æÔò´´½¨Ò»Ìõ¿ÕÁ´±í£¬È»ºóµ÷ÓÃ(Éî)¸³ÖµÔËËã·ûº¯Êı¸³ÖµÕûÌõÁ´±í
+	*this = list;	// é¦–å…ˆé€šè¿‡æ˜¾å¼çš„å†’å·è§„åˆ™åˆ›å»ºä¸€æ¡ç©ºé“¾è¡¨ï¼Œç„¶åè°ƒç”¨(æ·±)èµ‹å€¼è¿ç®—ç¬¦å‡½æ•°èµ‹å€¼æ•´æ¡é“¾è¡¨
 }
 
 template <typename T>
-LinkList<T>::~LinkList()						// Îö¹¹º¯Êı
+LinkList<T>::~LinkList()						// ææ„å‡½æ•°
 {
 	FreeList();
 }
 
 template <typename T>
-LinkList<T> & LinkList<T>::operator=(const LinkList &list)// (Éî)¸³ÖµÔËËã·ûº¯Êı
+LinkList<T> & LinkList<T>::operator=(const LinkList &list)// (æ·±)èµ‹å€¼è¿ç®—ç¬¦å‡½æ•°
 {
-	if(this == &list)					// Èç¹û¸³ÖµÔËËã±í´ïÊ½µÄÓÒÖµ¶ÔÏóÓë±¾¶ÔÏóÎªÍ¬Ò»¶ÔÏó£¨ËüÃÇµÄµØÖ·ÏàÍ¬£©
-		return *this;					// ÔòÖ±½Ó·µ»Ø±¾¶ÔÏó£¨*this£©
-	// ÕâÊÇÖØÔØË«Ä¿ÔËËã·ûº¯ÊıÊ±Ó¦¸Ã×¢ÒâµÄÎÊÌâ¡£Èç¹û¸³Öµ±í´ïÊ½×ó¡¢ÓÒÁ½¸ö¶ÔÏóÎªÍ¬Ò»¶ÔÏó£¬Ã³È»Ö´ĞĞÏÂÃæµÄÓï¾ä½«Ôì³ÉÑÏÖØ´íÎó£¡
-	// ÒòÎª£¬¾¡¹ÜÓÒ±ßµÄ¶ÔÏólist»¹±»ÊÓÎªconst³£Á¿¶ÔÏó£¬ÊÍ·ÅÁË×ó±ß¶ÔÏó£¨¼´±¾¶ÔÏó£©µÄËùÓĞ½áµãºó£¬ÓÒ±ß¶ÔÏóµÄËùÓĞ½áµãÒ²¾Í²»´æÔÚÁË
-	FreeList();							// ÒòÎª±¾¶ÔÏó²»ÊÇÓÒÖµ¶ÔÏó£¬¹Ê¿ÉÒÔÊÍ·Å±¾¶ÔÏóµÄËùÓĞ½áµã¡£
+	if(this == &list)					// å¦‚æœèµ‹å€¼è¿ç®—è¡¨è¾¾å¼çš„å³å€¼å¯¹è±¡ä¸æœ¬å¯¹è±¡ä¸ºåŒä¸€å¯¹è±¡ï¼ˆå®ƒä»¬çš„åœ°å€ç›¸åŒï¼‰
+		return *this;					// åˆ™ç›´æ¥è¿”å›æœ¬å¯¹è±¡ï¼ˆ*thisï¼‰
+	// è¿™æ˜¯é‡è½½åŒç›®è¿ç®—ç¬¦å‡½æ•°æ—¶åº”è¯¥æ³¨æ„çš„é—®é¢˜ã€‚å¦‚æœèµ‹å€¼è¡¨è¾¾å¼å·¦ã€å³ä¸¤ä¸ªå¯¹è±¡ä¸ºåŒä¸€å¯¹è±¡ï¼Œè´¸ç„¶æ‰§è¡Œä¸‹é¢çš„è¯­å¥å°†é€ æˆä¸¥é‡é”™è¯¯ï¼
+	// å› ä¸ºï¼Œå°½ç®¡å³è¾¹çš„å¯¹è±¡listè¿˜è¢«è§†ä¸ºconstå¸¸é‡å¯¹è±¡ï¼Œé‡Šæ”¾äº†å·¦è¾¹å¯¹è±¡ï¼ˆå³æœ¬å¯¹è±¡ï¼‰çš„æ‰€æœ‰ç»“ç‚¹åï¼Œå³è¾¹å¯¹è±¡çš„æ‰€æœ‰ç»“ç‚¹ä¹Ÿå°±ä¸å­˜åœ¨äº†
+	FreeList();							// å› ä¸ºæœ¬å¯¹è±¡ä¸æ˜¯å³å€¼å¯¹è±¡ï¼Œæ•…å¯ä»¥é‡Šæ”¾æœ¬å¯¹è±¡çš„æ‰€æœ‰ç»“ç‚¹ã€‚
 	Node<T> *temp = NULL;
 	for(Node<T> *p=list.head; p!=NULL; p=p->next)
 	{
-		Append(p->data);				// ±¾¶ÔÏóµÄ¡°µ±Ç°¡±½áµãËæAppendº¯Êı±ä»¯
-		if(p == list.cur_node)			// ·¢ÏÖÓÒÃæ¶ÔÏóµÄ¡°µ±Ç°¡±½áµã
-			temp = cur_node;			// ¼ÇÂ¼ÏÂ±¾¶ÔÏóµÄ¡°µ±Ç°¡±½áµã
+		Append(p->data);				// æœ¬å¯¹è±¡çš„â€œå½“å‰â€ç»“ç‚¹éšAppendå‡½æ•°å˜åŒ–
+		if(p == list.cur_node)			// å‘ç°å³é¢å¯¹è±¡çš„â€œå½“å‰â€ç»“ç‚¹
+			temp = cur_node;			// è®°å½•ä¸‹æœ¬å¯¹è±¡çš„â€œå½“å‰â€ç»“ç‚¹
 	}
 	cur_node = temp;
 	return *this;
 }
 
 template <typename T>
-void LinkList<T>::PutList(ostream &out) const	// Êä³öÁ´±íËùÓĞ½áµãµÄÊı¾İµ½ÒıÓÃoutËù°ó¶¨µÄostream¶ÔÏó£¬¸Ã¶ÔÏó¿ÉÒÔÊÇcout£¬Ò²¿ÉÒÔÊÇÎÄ¼ş¶ÔÏó
+void LinkList<T>::PutList(ostream &out) const	// è¾“å‡ºé“¾è¡¨æ‰€æœ‰ç»“ç‚¹çš„æ•°æ®åˆ°å¼•ç”¨outæ‰€ç»‘å®šçš„ostreamå¯¹è±¡ï¼Œè¯¥å¯¹è±¡å¯ä»¥æ˜¯coutï¼Œä¹Ÿå¯ä»¥æ˜¯æ–‡ä»¶å¯¹è±¡
 {
-	out << '(' << num << ')' << endl;			// Ê×ÏÈÊä³ö£¨»ò±£´æÖÁÎÄ¼ş£©½áµãµÄ¸öÊı
+	out << '(' << num << ')' << endl;			// é¦–å…ˆè¾“å‡ºï¼ˆæˆ–ä¿å­˜è‡³æ–‡ä»¶ï¼‰ç»“ç‚¹çš„ä¸ªæ•°
 	for(Node<T> *p=head; p!=NULL; p=p->next)
 		out << p->data << endl;
 }
 
 template <typename T>
-void LinkList<T>::GetList(istream &in)			// ´ÓÊäÈëÉè±¸in»ñÈ¡Êı¾İ£¬ĞÎ³ÉÁ´±í¡£
+void LinkList<T>::GetList(istream &in)			// ä»è¾“å…¥è®¾å¤‡inè·å–æ•°æ®ï¼Œå½¢æˆé“¾è¡¨ã€‚
 {
 //	FreeList();
 	T x;
 	char str[80];
 	int n;
-	in.getline(str, 80, '(');					// Ê×ÏÈºöÂÔ'('×Ö·û¼°Æä¿ÉÄÜµÄËùÓĞÇ°µ¼×Ö·û
-	in.getline(str, 80);						// ¶ÁÈ¡×Ö·ûÖÁĞĞÎ²
+	in.getline(str, 80, '(');					// é¦–å…ˆå¿½ç•¥'('å­—ç¬¦åŠå…¶å¯èƒ½çš„æ‰€æœ‰å‰å¯¼å­—ç¬¦
+	in.getline(str, 80);						// è¯»å–å­—ç¬¦è‡³è¡Œå°¾
 	n = atoi(str);
 	for(int i=0; i<n; i++)
 	{
@@ -147,21 +147,21 @@ void LinkList<T>::GetList(istream &in)			// ´ÓÊäÈëÉè±¸in»ñÈ¡Êı¾İ£¬ĞÎ³ÉÁ´±í¡£
 }
 
 template <typename T>
-ostream & operator<<(ostream &out, const LinkList<T> &list)		// ±¾º¯Êı²»ÊÇ³ÉÔ±º¯Êı£¬½öÎªÒ»¸öÆÕÍ¨µÄC++º¯Êı
+ostream & operator<<(ostream &out, const LinkList<T> &list)		// æœ¬å‡½æ•°ä¸æ˜¯æˆå‘˜å‡½æ•°ï¼Œä»…ä¸ºä¸€ä¸ªæ™®é€šçš„C++å‡½æ•°
 {
 	list.PutList(out);
 	return out;
 }
 
 template <typename T>
-istream & operator>>(istream &in, LinkList<T> &list)			// ±¾º¯Êı²»ÊÇ³ÉÔ±º¯Êı£¬½öÎªÒ»¸öÆÕÍ¨µÄC++º¯Êı
+istream & operator>>(istream &in, LinkList<T> &list)			// æœ¬å‡½æ•°ä¸æ˜¯æˆå‘˜å‡½æ•°ï¼Œä»…ä¸ºä¸€ä¸ªæ™®é€šçš„C++å‡½æ•°
 {
 	list.GetList(in);
 	return in;
 }
 
 template <typename T>
-int LinkList<T>::Save(const char *filename)		// ½«Á´±íËùÓĞ½áµãµÄÊı¾İĞ´ÈëÖ¸¶¨ÎÄ¼ş
+int LinkList<T>::Save(const char *filename)		// å°†é“¾è¡¨æ‰€æœ‰ç»“ç‚¹çš„æ•°æ®å†™å…¥æŒ‡å®šæ–‡ä»¶
 {
 	ofstream outfile(filename);
 	if(outfile.fail())
@@ -172,7 +172,7 @@ int LinkList<T>::Save(const char *filename)		// ½«Á´±íËùÓĞ½áµãµÄÊı¾İĞ´ÈëÖ¸¶¨ÎÄ¼ş
 }
 
 template <typename T>
-int LinkList<T>::Load(const char *filename)		// ´ÓÖ¸¶¨ÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ£¬¹¹ÔìÁ´±í
+int LinkList<T>::Load(const char *filename)		// ä»æŒ‡å®šæ–‡ä»¶ä¸­è¯»å–æ•°æ®ï¼Œæ„é€ é“¾è¡¨
 {
 	int n = NumNodes();
 	ifstream infile(filename);
@@ -185,7 +185,7 @@ int LinkList<T>::Load(const char *filename)		// ´ÓÖ¸¶¨ÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ£¬¹¹ÔìÁ´±í
 }
 
 template <typename T>
-void LinkList<T>::ShowList() const				// Êä³öÁ´±íËùÓĞ½áµãµÄÊı¾İ£¨¸ñÊ½Ò»£ºÔÚÒ»ĞĞÖĞÊä³ö£©
+void LinkList<T>::ShowList() const				// è¾“å‡ºé“¾è¡¨æ‰€æœ‰ç»“ç‚¹çš„æ•°æ®ï¼ˆæ ¼å¼ä¸€ï¼šåœ¨ä¸€è¡Œä¸­è¾“å‡ºï¼‰
 {
 	cout << "head";
 	for(Node<T> *p=head; p!=NULL; p=p->next)
@@ -194,7 +194,7 @@ void LinkList<T>::ShowList() const				// Êä³öÁ´±íËùÓĞ½áµãµÄÊı¾İ£¨¸ñÊ½Ò»£ºÔÚÒ»ĞĞÖ
 }
 
 template <typename T>
-Node<T> *LinkList<T>::Insert(const T &t)		// ²åÈëÒ»¸ö½áµã³ÉÎªĞÂµÄÊ×½áµã
+Node<T> *LinkList<T>::Insert(const T &t)		// æ’å…¥ä¸€ä¸ªç»“ç‚¹æˆä¸ºæ–°çš„é¦–ç»“ç‚¹
 {
 	Node<T> *p = new Node<T>(t);
 	p->next = head;
@@ -204,7 +204,7 @@ Node<T> *LinkList<T>::Insert(const T &t)		// ²åÈëÒ»¸ö½áµã³ÉÎªĞÂµÄÊ×½áµã
 }
 
 template <typename T>
-Node<T> *LinkList<T>::InsertBefore(const T &t)	// ÔÚµ±Ç°½áµãÖ®Ç°²åÈëÒ»¸ö½áµã
+Node<T> *LinkList<T>::InsertBefore(const T &t)	// åœ¨å½“å‰ç»“ç‚¹ä¹‹å‰æ’å…¥ä¸€ä¸ªç»“ç‚¹
 {
 	if(cur_node==NULL || head==NULL)
 		return cur_node=NULL;
@@ -225,7 +225,7 @@ Node<T> *LinkList<T>::InsertBefore(const T &t)	// ÔÚµ±Ç°½áµãÖ®Ç°²åÈëÒ»¸ö½áµã
 }
 
 template <typename T>
-Node<T> *LinkList<T>::InsertAfter(const T &t)	// ÔÚµ±Ç°½áµãÖ®ºó²åÈëÒ»¸ö½áµã
+Node<T> *LinkList<T>::InsertAfter(const T &t)	// åœ¨å½“å‰ç»“ç‚¹ä¹‹åæ’å…¥ä¸€ä¸ªç»“ç‚¹
 {
 	if(cur_node==NULL || head==NULL)
 		return cur_node=NULL;
@@ -237,9 +237,9 @@ Node<T> *LinkList<T>::InsertAfter(const T &t)	// ÔÚµ±Ç°½áµãÖ®ºó²åÈëÒ»¸ö½áµã
 }
 
 template <typename T>
-Node<T> *LinkList<T>::Append(const T &t)		// ×·¼ÓÒ»¸ö½áµã³ÉÎªĞÂµÄÎ²½áµã
+Node<T> *LinkList<T>::Append(const T &t)		// è¿½åŠ ä¸€ä¸ªç»“ç‚¹æˆä¸ºæ–°çš„å°¾ç»“ç‚¹
 {
-	Node<T> *p = new Node<T>(t);				// Node<T>µÄ×ª»»¹¹Ôìº¯ÊıÊ¹nextÎªNULL
+	Node<T> *p = new Node<T>(t);				// Node<T>çš„è½¬æ¢æ„é€ å‡½æ•°ä½¿nextä¸ºNULL
 	if(head==NULL)
 		head = p;
 	else
@@ -253,21 +253,21 @@ Node<T> *LinkList<T>::Append(const T &t)		// ×·¼ÓÒ»¸ö½áµã³ÉÎªĞÂµÄÎ²½áµã
 }
 
 template <typename T>
-void LinkList<T>::FreeList()					// ÊÍ·ÅÁ´±íÖĞµÄËùÓĞ½áµã
+void LinkList<T>::FreeList()					// é‡Šæ”¾é“¾è¡¨ä¸­çš„æ‰€æœ‰ç»“ç‚¹
 {
 	Node<T> *p;
 	while(head!=NULL)
 	{
-		p = head;								// ÔİÊ±±£´æÔ­Á´Ê×½áµãµØÖ·£¬ÒÔ±ãÊÍ·Å
-		head = head->next;						// Ô­Ê×½áµãÍÑÁ´£¬Ô­Ê×½áµãµÄÏÂÒ»¸ö½áµã³ÉÎªÁ´Ê×½áµã
-		delete p;								// ÕâÀïÓÃµ½ÁËÒşº¬¼ÙÉè£º¼ÙÉèËùÓĞ½áµã¶¼ÊÇ¶¯Ì¬½áµã
+		p = head;								// æš‚æ—¶ä¿å­˜åŸé“¾é¦–ç»“ç‚¹åœ°å€ï¼Œä»¥ä¾¿é‡Šæ”¾
+		head = head->next;						// åŸé¦–ç»“ç‚¹è„±é“¾ï¼ŒåŸé¦–ç»“ç‚¹çš„ä¸‹ä¸€ä¸ªç»“ç‚¹æˆä¸ºé“¾é¦–ç»“ç‚¹
+		delete p;								// è¿™é‡Œç”¨åˆ°äº†éšå«å‡è®¾ï¼šå‡è®¾æ‰€æœ‰ç»“ç‚¹éƒ½æ˜¯åŠ¨æ€ç»“ç‚¹
 	}
 	cur_node = NULL;
 	num = 0;
 }
 
 template <typename T>
-T LinkList<T>::DeleteCurNode() throw(int)		// É¾³ıµ±Ç°½áµã£¬ÆäÏÂÒ»¸ö½áµã£¨³ÉÎªĞÂµÄµ±Ç°½áµã£©£¬Öµ·µ»Ø±»É¾½áµãÊı¾İÓòÊıÖµ
+T LinkList<T>::DeleteCurNode()  		// åˆ é™¤å½“å‰ç»“ç‚¹ï¼Œå…¶ä¸‹ä¸€ä¸ªç»“ç‚¹ï¼ˆæˆä¸ºæ–°çš„å½“å‰ç»“ç‚¹ï¼‰ï¼Œå€¼è¿”å›è¢«åˆ ç»“ç‚¹æ•°æ®åŸŸæ•°å€¼
 {
 	if(cur_node==NULL || head==NULL)
 		throw -1;
@@ -284,34 +284,34 @@ T LinkList<T>::DeleteCurNode() throw(int)		// É¾³ıµ±Ç°½áµã£¬ÆäÏÂÒ»¸ö½áµã£¨³ÉÎªĞÂ
 	else
 	{
 		Skip(-1);
-		p = cur_node->next;			// pÖ¸Ïò´ıÉ¾³ıµÄ½áµã
-		cur_node->next = p->next;	// ´ıÉ¾³ıµÄ½áµãÍÑÁ´
-		cur_node = p->next;			// ÒÆ¶¯µ±Ç°½áµã
-		x = p->data;				// È¡³öÆäÊı¾İÓòÊı¾İÖµ
-		delete p;					// ÊÍ·Å´øÉ¾³ıµÄ½áµã
+		p = cur_node->next;			// pæŒ‡å‘å¾…åˆ é™¤çš„ç»“ç‚¹
+		cur_node->next = p->next;	// å¾…åˆ é™¤çš„ç»“ç‚¹è„±é“¾
+		cur_node = p->next;			// ç§»åŠ¨å½“å‰ç»“ç‚¹
+		x = p->data;				// å–å‡ºå…¶æ•°æ®åŸŸæ•°æ®å€¼
+		delete p;					// é‡Šæ”¾å¸¦åˆ é™¤çš„ç»“ç‚¹
 	}
 	num--;
 	return x;
 }
 
 template <typename T>
-T LinkList<T>::ModifyData(const T &t) throw(int)// ĞŞ¸Ä(Ìæ»»)µ±Ç°½áµãµÄÊı¾İÓòÊıÖµ
+T LinkList<T>::ModifyData(const T &t)  // ä¿®æ”¹(æ›¿æ¢)å½“å‰ç»“ç‚¹çš„æ•°æ®åŸŸæ•°å€¼
 {
 	if(cur_node==NULL)
 		throw -1;
-	T x = cur_node->data;			// È¡³öµ±Ç°½áµãÊı¾İÓòÊı¾İÖµ
-	cur_node->data = t;				// Ìæ»»Êı¾İÓòÊı¾İÖµ
+	T x = cur_node->data;			// å–å‡ºå½“å‰ç»“ç‚¹æ•°æ®åŸŸæ•°æ®å€¼
+	cur_node->data = t;				// æ›¿æ¢æ•°æ®åŸŸæ•°æ®å€¼
 	return x;
 }
 
 template <typename T>
-int LinkList<T>::NumNodes() const				// ·µ»Ø½áµãÊı
+int LinkList<T>::NumNodes() const				// è¿”å›ç»“ç‚¹æ•°
 {
 	return num;
 }
 
 template <typename T>
-int LinkList<T>::CurPos() const					// ·µ»Øµ±Ç°½áµãµÄĞòºÅ£¨-1±íÊ¾ÎŞµ±Ç°½áµã£©
+int LinkList<T>::CurPos() const					// è¿”å›å½“å‰ç»“ç‚¹çš„åºå·ï¼ˆ-1è¡¨ç¤ºæ— å½“å‰ç»“ç‚¹ï¼‰
 {
 	if(cur_node == NULL)
 		return -1;
@@ -319,19 +319,19 @@ int LinkList<T>::CurPos() const					// ·µ»Øµ±Ç°½áµãµÄĞòºÅ£¨-1±íÊ¾ÎŞµ±Ç°½áµã£©
 	Node<T> *p;
 	for(p=head; p!=NULL && p!=cur_node; p=p->next,n++)
 		;
-	if(p==NULL)									// ´ËÊ±µÄcur_nodeÖ¸Ïò²»Ã÷
+	if(p==NULL)									// æ­¤æ—¶çš„cur_nodeæŒ‡å‘ä¸æ˜
 		return -1;
 	return n;
 }
 
 template <typename T>
-Node<T> *LinkList<T>::CurNode()					// ·µ»Øµ±Ç°½áµãµÄµØÖ·£¨NULL±íÊ¾ÎŞµ±Ç°½áµã£©
+Node<T> *LinkList<T>::CurNode()					// è¿”å›å½“å‰ç»“ç‚¹çš„åœ°å€ï¼ˆNULLè¡¨ç¤ºæ— å½“å‰ç»“ç‚¹ï¼‰
 {
 	return cur_node;
 }
 
 template <typename T>
-T & LinkList<T>::CurData() throw(int)			// ÒıÓÃ·µ»Øµ±Ç°½áµãÊı¾İÓò³ÉÔ±£¬º¯Êıµ÷ÓÃ±í´ïÊ½¿É×ö×óÖµ
+T & LinkList<T>::CurData()  			// å¼•ç”¨è¿”å›å½“å‰ç»“ç‚¹æ•°æ®åŸŸæˆå‘˜ï¼Œå‡½æ•°è°ƒç”¨è¡¨è¾¾å¼å¯åšå·¦å€¼
 {
 	if(cur_node!=NULL)
 		return cur_node->data;
@@ -340,13 +340,13 @@ T & LinkList<T>::CurData() throw(int)			// ÒıÓÃ·µ»Øµ±Ç°½áµãÊı¾İÓò³ÉÔ±£¬º¯Êıµ÷ÓÃ±
 }
 
 template <typename T>
-Node<T> *LinkList<T>::GoTop()					// µ±Ç°½áµã¾ø¶Ô¶¨Î»£ºÊ×½áµã¡¢µÚn¸ö½áµã(n´Ó0Æğ)¡¢Î²½áµã
+Node<T> *LinkList<T>::GoTop()					// å½“å‰ç»“ç‚¹ç»å¯¹å®šä½ï¼šé¦–ç»“ç‚¹ã€ç¬¬nä¸ªç»“ç‚¹(nä»0èµ·)ã€å°¾ç»“ç‚¹
 {
 	return cur_node = head;
 }
 
 template <typename T>
-Node<T> *LinkList<T>::Go(int n)					// µ±Ç°½áµã¾ø¶Ô¶¨Î»£ºÊ×½áµã¡¢µÚn¸ö½áµã(n´Ó0Æğ)¡¢Î²½áµã
+Node<T> *LinkList<T>::Go(int n)					// å½“å‰ç»“ç‚¹ç»å¯¹å®šä½ï¼šé¦–ç»“ç‚¹ã€ç¬¬nä¸ªç»“ç‚¹(nä»0èµ·)ã€å°¾ç»“ç‚¹
 {
 	if(n<0 || n>num)
 		return cur_node=NULL;
@@ -361,17 +361,17 @@ Node<T> *LinkList<T>::Go(int n)					// µ±Ç°½áµã¾ø¶Ô¶¨Î»£ºÊ×½áµã¡¢µÚn¸ö½áµã(n´Ó0Æ
 }
 
 template <typename T>
-Node<T> *LinkList<T>::GoBottom()				// µ±Ç°½áµã¾ø¶Ô¶¨Î»£ºÊ×½áµã¡¢µÚn¸ö½áµã(n´Ó0Æğ)¡¢Î²½áµã
+Node<T> *LinkList<T>::GoBottom()				// å½“å‰ç»“ç‚¹ç»å¯¹å®šä½ï¼šé¦–ç»“ç‚¹ã€ç¬¬nä¸ªç»“ç‚¹(nä»0èµ·)ã€å°¾ç»“ç‚¹
 {
-	if(head==NULL)								// ¿ÕÁ´±íÊ±
+	if(head==NULL)								// ç©ºé“¾è¡¨æ—¶
 		cur_node = NULL;
-	for(cur_node=head; cur_node->next!=NULL; cur_node=cur_node->next)	// ´ËÊ±Á´±í·Ç¿Õ£¬cur_node->nextºÏ·¨
+	for(cur_node=head; cur_node->next!=NULL; cur_node=cur_node->next)	// æ­¤æ—¶é“¾è¡¨éç©ºï¼Œcur_node->nextåˆæ³•
 		;
 	return cur_node;
 }
 
 template <typename T>
-Node<T> *LinkList<T>::Skip(int n) throw(int)	// µ±Ç°½áµãÏà¶Ô¶¨Î»£¨n¿ÉÎª¸ºÊı£©£¬Ä¬ÈÏnÎª1±íÊ¾ÏÂÒ»¸ö½áµã
+Node<T> *LinkList<T>::Skip(int n)  	// å½“å‰ç»“ç‚¹ç›¸å¯¹å®šä½ï¼ˆnå¯ä¸ºè´Ÿæ•°ï¼‰ï¼Œé»˜è®¤nä¸º1è¡¨ç¤ºä¸‹ä¸€ä¸ªç»“ç‚¹
 {
 	if(cur_node == NULL)
 		throw -1;
@@ -380,7 +380,7 @@ Node<T> *LinkList<T>::Skip(int n) throw(int)	// µ±Ç°½áµãÏà¶Ô¶¨Î»£¨n¿ÉÎª¸ºÊı£©£¬Ä
 }
 
 template <typename T> template <typename TYPE>
-Node<T> *LinkList<T>::Locate(const TYPE &x, bool newsearch) // µ±Ç°½áµãÒÀÌõ¼ş£¨¸ø¶¨TYPEÀàĞÍ£©¶¨Î»
+Node<T> *LinkList<T>::Locate(const TYPE &x, bool newsearch) // å½“å‰ç»“ç‚¹ä¾æ¡ä»¶ï¼ˆç»™å®šTYPEç±»å‹ï¼‰å®šä½
 {
 	static Node<T> *p=head;
 	static TYPE data = x;
@@ -389,27 +389,27 @@ Node<T> *LinkList<T>::Locate(const TYPE &x, bool newsearch) // µ±Ç°½áµãÒÀÌõ¼ş£¨¸
 		p = head;
 		data = x;
 	}
-	for(; p!=NULL && TYPE(p->data)!=TYPE(data); p=p->next)	// forÑ­»·µÄ±í´ïÊ½1Îª¿Õ£º´ÓÁ´±íµÄ"µ±Ç°"½áµãÆğ¼ÌĞø²éÕÒ
-		;													// TYPE()ÎªÀàĞÍÇ¿ÖÆ×ª»»ÔËËã·û
+	for(; p!=NULL && TYPE(p->data)!=TYPE(data); p=p->next)	// forå¾ªç¯çš„è¡¨è¾¾å¼1ä¸ºç©ºï¼šä»é“¾è¡¨çš„"å½“å‰"ç»“ç‚¹èµ·ç»§ç»­æŸ¥æ‰¾
+		;													// TYPE()ä¸ºç±»å‹å¼ºåˆ¶è½¬æ¢è¿ç®—ç¬¦
 	cur_node = p;
-	if(p!=NULL)		// Èç¹ûÕÒµ½£¬ÔÚ·µ»ØÕÒµ½µÄ½áµãµØÖ·£¨cur_node£©Ö®Ç°£¬p"ÇÄÇÄ"µØÏòÇ°×ßÒ»²½£¬Îª¼ÌĞø²éÕÒ×öºÃ×¼±¸
+	if(p!=NULL)		// å¦‚æœæ‰¾åˆ°ï¼Œåœ¨è¿”å›æ‰¾åˆ°çš„ç»“ç‚¹åœ°å€ï¼ˆcur_nodeï¼‰ä¹‹å‰ï¼Œp"æ‚„æ‚„"åœ°å‘å‰èµ°ä¸€æ­¥ï¼Œä¸ºç»§ç»­æŸ¥æ‰¾åšå¥½å‡†å¤‡
 		p = p->next;
 	return cur_node;
 }
 
 template <typename T> template <typename TYPE>
-void LinkList<T>::Sort(const TYPE &x, bool ascending)	// ¸ù¾İTYPEÀàĞÍÅÅĞò£¨ÉıĞò»ò½µĞò£©
+void LinkList<T>::Sort(const TYPE &x, bool ascending)	// æ ¹æ®TYPEç±»å‹æ’åºï¼ˆå‡åºæˆ–é™åºï¼‰
 {
 	if(head==NULL || head->next==NULL) return;
 	Node<T> *p, *pGuard, *rest;
-	// Ê×ÏÈ½«Ô­Á´±í²ğ³ÉÁ½ÌõÁ´±í
-	rest = head->next;			// ¾ÉÁ´£ºÔ­µÚÒ»¸ö½áµãÆğ
-	head->next = NULL;			// ĞÂÁ´£ºµ¥½áµãÁ´±í£¬Ô­µÚ 0 ¸ö½áµã
-	// ÒÀ´Î´¦Àí£¬Ö±ÖÁ¾ÉÁ´Îª¿Õ
+	// é¦–å…ˆå°†åŸé“¾è¡¨æ‹†æˆä¸¤æ¡é“¾è¡¨
+	rest = head->next;			// æ—§é“¾ï¼šåŸç¬¬ä¸€ä¸ªç»“ç‚¹èµ·
+	head->next = NULL;			// æ–°é“¾ï¼šå•ç»“ç‚¹é“¾è¡¨ï¼ŒåŸç¬¬ 0 ä¸ªç»“ç‚¹
+	// ä¾æ¬¡å¤„ç†ï¼Œç›´è‡³æ—§é“¾ä¸ºç©º
 	while(rest != NULL)
 	{
 		p = rest;
-		rest = rest->next;		// Ğ¶ÏÂ¾ÉÁ´¡°Ê×¡±½áµã
+		rest = rest->next;		// å¸ä¸‹æ—§é“¾â€œé¦–â€ç»“ç‚¹
 		if( (ascending && ((TYPE)p->data < (TYPE)head->data)) || (!ascending && TYPE(p->data) > TYPE(head->data)) )
 		{
 			p->next = head;
@@ -427,19 +427,19 @@ void LinkList<T>::Sort(const TYPE &x, bool ascending)	// ¸ù¾İTYPEÀàĞÍÅÅĞò£¨ÉıĞò»
 }
 
 template <typename T>
-void LinkList<T>::Reverse()						// Á´±í½áµãµ¹ÖÃ
+void LinkList<T>::Reverse()						// é“¾è¡¨ç»“ç‚¹å€’ç½®
 {
-	if(head==NULL || head->next==NULL)			// ¿ÕÁ´±í¡¢µ¥½áµãÁ´±í£ºÎŞĞë²Ù×÷
+	if(head==NULL || head->next==NULL)			// ç©ºé“¾è¡¨ã€å•ç»“ç‚¹é“¾è¡¨ï¼šæ— é¡»æ“ä½œ
 		return;
-												// Ê×ÏÈ½«Ô­Á´±í²ğ³ÉÁ½ÌõÁ´±í
-	Node<T> *p, *rest = head->next;				// ½«Ô­Á´±íµÄµÚ¶ş¸ö½áµãÆğÖÁÎ²½áµã£¬ÊÓÎª¡°Ê£ÓàÁ´±í¡±rest
-	head->next = NULL;							// ½«Ô­Á´±íµÄÊ×½Úµã×÷ÎªÒ»ÌõĞÂÁ´±í£¨Ä¿Ç°½öÓĞÒ»¸ö½áµã£©
-	while(rest!=NULL)							// ½«¡°Ê£ÓàÁ´±í¡±´¦ÀíÍê¼´½áÊøÑ­»·
+												// é¦–å…ˆå°†åŸé“¾è¡¨æ‹†æˆä¸¤æ¡é“¾è¡¨
+	Node<T> *p, *rest = head->next;				// å°†åŸé“¾è¡¨çš„ç¬¬äºŒä¸ªç»“ç‚¹èµ·è‡³å°¾ç»“ç‚¹ï¼Œè§†ä¸ºâ€œå‰©ä½™é“¾è¡¨â€rest
+	head->next = NULL;							// å°†åŸé“¾è¡¨çš„é¦–èŠ‚ç‚¹ä½œä¸ºä¸€æ¡æ–°é“¾è¡¨ï¼ˆç›®å‰ä»…æœ‰ä¸€ä¸ªç»“ç‚¹ï¼‰
+	while(rest!=NULL)							// å°†â€œå‰©ä½™é“¾è¡¨â€å¤„ç†å®Œå³ç»“æŸå¾ªç¯
 	{
 		p = rest;
-		rest = rest->next;						// ½«¡°Ê£ÓàÁ´±í¡±µÄÊ×½ÚµãĞ¶ÏÂ£¨²¢²»É¾³ı£©£¬ÓÃp¼Ç×¡
+		rest = rest->next;						// å°†â€œå‰©ä½™é“¾è¡¨â€çš„é¦–èŠ‚ç‚¹å¸ä¸‹ï¼ˆå¹¶ä¸åˆ é™¤ï¼‰ï¼Œç”¨pè®°ä½
 		p->next = head;
-		head = p;								// ½«Ğ¶ÏÂµÄ½áµã²åÈëĞÂÁ´±íµÄÊ×²¿
-	}											// ×¢Òâ£ºÓÉÓÚÖ»ĞŞ¸ÄÁË¸÷½áµãµÄnextµÄÖµ£¬cur_node²»±ä
+		head = p;								// å°†å¸ä¸‹çš„ç»“ç‚¹æ’å…¥æ–°é“¾è¡¨çš„é¦–éƒ¨
+	}											// æ³¨æ„ï¼šç”±äºåªä¿®æ”¹äº†å„ç»“ç‚¹çš„nextçš„å€¼ï¼Œcur_nodeä¸å˜
 }
 #endif
