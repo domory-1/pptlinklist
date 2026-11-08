@@ -1,0 +1,17 @@
+# 本机 IDE 缓存和编译产物
+.vs/
+**/x64/
+*.exe
+*.obj
+*.pdb
+*.idb
+
+# 本机生成的演示文件
+demo-*/
+generate_ppt.py
+output.pptx
+__pycache__/
+
+# 本机密钥配置
+.env
+.env.*

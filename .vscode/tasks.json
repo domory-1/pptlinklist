@@ -8,12 +8,16 @@
     "-fdiagnostics-color=always",
     "-g",
     "-std=c++17",
-    "${workspaceFolder}/*.cpp",
+    "${fileDirname}/*.cpp",
     "-o",
-    "${workspaceFolder}\\${fileBasenameNoExtension}.exe"
+    "${workspaceFolder}\\${fileBasenameNoExtension}.exe",
+    "-lcurl"
 ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${fileDirname}",
+                "env": {
+                    "PATH": "E:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
             },
             "problemMatcher": [
                 "$gcc"
